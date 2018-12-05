@@ -1,13 +1,9 @@
+import java.util.*;
+
+
 public class Sorts{
 
-private static min(int[] ary){
-  int min = 0;
-  for(int i = 0; i < ary.length; i++){
-    if (ary[i] < min)
-      ary[i] = min;
 
-  }
-}
 
 public static void selectionsort( int[] ary) {
 
@@ -25,18 +21,18 @@ public static void selectionsort( int[] ary) {
      ary[i] = min;
      ary[index] = holder;
    }
-   System.out.println(ary);
+   System.out.println(Arrays.toString(ary));
  }
-
 
 public static void main(String[] args){
   int[] test = new int[6];
 
   for(int i = 0; i < 6; i++){
-    test[i] = Math.random();
+    test[i] = (int) (Math.random() * 1000);
   }
-  System.out.println(test);
+  System.out.println(Arrays.toString(test));
   Sorts.selectionsort(test);
+
 
 }
 }
