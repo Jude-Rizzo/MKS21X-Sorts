@@ -4,23 +4,28 @@ import java.util.*;
 public class Sorts{
 
 
+  public static void selectionsort(int[] ary) {
+		int min = 0;
+    int holder = 0;
 
-public static void selectionsort( int[] ary) {
+		for (int start = 0; start < ary.length; start++) {
 
-   for( int i = 0; i < ary.length; i++) {
-     int min = 0;
-     int index = 0;
-     int holder = 0;
-     for( int j = i; j < ary.length; j++) {
-       if( ary[j] <= min) {
-         min = ary[j];
-         index = j;
-       }
-     }
-     holder = ary[i];
-     ary[i] = min;
-     ary[index] = holder;
-   }
+			min = start;
+
+			for (int i = start; i < ary.length; i++) {
+				if (ary[i] < ary[min]){
+
+        min = i;
+      }
+			}
+
+			holder = ary[min];
+			ary[min] = ary[start];
+			ary[start] = holder;
+		}
+
+
+
    System.out.println(Arrays.toString(ary));
  }
 
