@@ -22,11 +22,12 @@ public class Sorts{
 			holder = ary[min];
 			ary[min] = ary[start];
 			ary[start] = holder;
+      System.out.println(Arrays.toString(ary));
 		}
 
 
 
-   System.out.println(Arrays.toString(ary));
+   
  }
 
 public static void main(String[] args){
