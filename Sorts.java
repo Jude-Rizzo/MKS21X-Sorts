@@ -26,19 +26,40 @@ public class Sorts{
 		}
 
 
+ }
 
-   
+
+ public static void bubbleSort(int[] args){
+   int holder;
+   boolean s;
+   //s stores if there was a swap, if no swaps were made in the last round we go through
+   for(int i = args.length - 2; i >= 0;  i--){
+     s = false;
+     for(int j = 0; j < i; j++){
+     if(args[i] < args[i + 1]){
+       holder = args[i];
+       args[i] = args[i + 1];
+       args[i + 1] = holder;
+       s = true;
+     }
+   } if (!s) return;
+   }
  }
 
 public static void main(String[] args){
-  int[] test = new int[6];
+  try{
+    Integer.parseInt(args[0]);
+  } catch(NumberFormatException e) {
+    System.out.println("put in an int please");
+  int[] test = new int[Integer.parseInt(args[0])];
 
-  for(int i = 0; i < 6; i++){
+  for(int i = 0; i < Integer.parseInt(args[0]); i++){
     test[i] = (int) (Math.random() * 1000);
   }
   System.out.println(Arrays.toString(test));
-  Sorts.selectionsort(test);
+  Sorts.bubbleSort(test);
 
 
+}
 }
 }
