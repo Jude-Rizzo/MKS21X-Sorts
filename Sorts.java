@@ -1,6 +1,4 @@
 import java.util.*;
-
-
 public class Sorts{
 
 
@@ -42,24 +40,9 @@ public class Sorts{
        args[i + 1] = holder;
        s = true;
      }
-   } if (!s) return;
+   } if (!s) System.out.println(Arrays.toString(args));
    }
  }
 
-public static void main(String[] args){
-  try{
-    Integer.parseInt(args[0]);
-  } catch(NumberFormatException e) {
-    System.out.println("put in an int please");
-  int[] test = new int[Integer.parseInt(args[0])];
 
-  for(int i = 0; i < Integer.parseInt(args[0]); i++){
-    test[i] = (int) (Math.random() * 1000);
-  }
-  System.out.println(Arrays.toString(test));
-  Sorts.bubbleSort(test);
-
-
-}
-}
 }
