@@ -46,7 +46,7 @@ public class Sorts{
 
 public static void insertionSort(int[] ary){
   for(int i = 1; i < ary.length; i++){
-    orig = ary[i];
+    int orig = ary[i];
     int cur = i;
     while(cur > 0 && ary[cur-1] > orig){
       ary[cur + 1] = ary[cur]; //shift
