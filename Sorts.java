@@ -3,46 +3,41 @@ public class Sorts{
 
 
   public static void selectionSort(int[] ary) {
-		int min = 0;
-    int holder = 0;
+  		int min = 0;
+      int holder = 0;
+  		for (int start = 0; start < ary.length; start++) {
+  			min = start;
 
-		for (int start = 0; start < ary.length; start++) {
+  			for (int i = start; i < ary.length; i++) {
+  				if (ary[i] < ary[min]){
+          min = i;
+          holder = ary[min];
+          ary[min] = ary[start];
+          ary[start] = holder;
+        }
 
-			min = start;
+  			}
 
-			for (int i = start; i < ary.length; i++) {
-				if (ary[i] < ary[min]){
-        min = i;
-        holder = ary[min];
-        ary[min] = ary[start];
-        ary[start] = holder;
-      }
-
-			}
-
-		}
+  		}
 
 
- }
+   }
 
 
  public static void bubbleSort(int[] args){
-   int holder;
-   boolean s = false;
-   if(args.length != 1 && args.length != 0){
-   for(int i = args.length - 2; i >= 0;  i--){
-     s = false;
-     for(int j = 0; j < i; j++){
-     if(args[i] < args[i + 1]){
-       holder = args[i];
-       args[i] = args[i + 1];
-       args[i + 1] = holder;
-       s = true;
-     }
-   }
- } if (!s)return;
-   }
- }
+  if(args.length!= 0){
+    int b = args.length;
+    for(int i = 0; i < args.length - 1; i++){
+      for(int j = 0; j < b - 1; j = j ++){
+        if (args[j] > args[j + 1]){
+          int holder = args[j];
+          args[j] = args[j + 1];
+          args[j + 1] = holder;
+        }
+      } b -= 1;
+    }
+  }
+}
 
 public static void insertionSort(int[] ary){
   for(int i = 1; i < ary.length; i++){
