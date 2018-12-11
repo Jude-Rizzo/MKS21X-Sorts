@@ -12,15 +12,14 @@ public class Sorts{
 
 			for (int i = start; i < ary.length; i++) {
 				if (ary[i] < ary[min]){
-
         min = i;
+        holder = ary[min];
+        ary[min] = ary[start];
+        ary[start] = holder;
       }
+
 			}
 
-			holder = ary[min];
-			ary[min] = ary[start];
-			ary[start] = holder;
-      return;
 		}
 
 
@@ -30,7 +29,6 @@ public class Sorts{
  public static void bubbleSort(int[] args){
    int holder;
    boolean s = false;
-   //s stores if there was a swap, if no swaps were made in the last round we go through
    if(args.length != 1 && args.length != 0){
    for(int i = args.length - 2; i >= 0;  i--){
      s = false;
@@ -46,5 +44,16 @@ public class Sorts{
    }
  }
 
+public static void insertionSort(int[] ary){
+  for(int i = 1; i < ary.length; i++){
+    orig = ary[i];
+    int cur = i;
+    while(cur > 0 && ary[cur-1] > orig){
+      ary[cur + 1] = ary[cur]; //shift
+      cur --;
+    }
+    ary[cur] = orig;
+  }
+}
 
 }
