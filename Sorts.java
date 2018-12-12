@@ -40,8 +40,8 @@ public static void insertionSort(int[] ary){
   for(int i = 1; i < ary.length; i++){
     int orig = ary[i];
     int cur = i;
-    while(cur > 0 && ary[cur-1] > orig){
-      ary[cur + 1] = ary[cur]; //shift
+    while(cur != 0 && ary[cur-1] > orig){
+      ary[cur] = ary[cur - 1]; //shift
       cur --;
     }
     ary[cur] = orig;
